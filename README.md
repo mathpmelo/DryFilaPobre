@@ -1,17 +1,25 @@
 # DryFilaPobre
 Secadora de filamentos caseira
 
+## Instalação
 Instale o Python e o ESPHome
+https://esphome.io/guides/installing_esphome.html
+
+Após a instalação faça o setup inicial, plugue o esp32 no computador segurando o botão BOOT, após plugar pode soltar o botão
+
+Grave o arquivo inicial com o comando
+
+```esphome run first_program.yaml```
+
+Acesse o endereço IP informado após a instalação para confirmar o funcionamento
 
 
+## Gravando o arquivo da estufa
 
-
-
-
+Após é possivel gravar o arquivo da estufa via WIFI, podemos desconectar o cabo USB.
 Edite o YAML inicial colocando o seguinte código:
 
-```json
-
+```yaml
 captive_portal:
 
 # Enable web interface
@@ -94,3 +102,10 @@ switch:
     output: onboard_led
     id: led_switch
 ```
+
+
+Após a edição basta rodar
+
+```esphome run first_program.yaml```
+
+e escolher o dispositivo na rede.
