@@ -109,3 +109,11 @@ Após a edição basta rodar
 ```esphome run first_program.yaml```
 
 e escolher o dispositivo na rede.
+
+
+## Pinos utilizados
+<img width="690" height="389" alt="image" src="https://github.com/user-attachments/assets/4e9b6219-e53a-40fc-b767-a6ab04c3b6d2" />
+
+Sensor: A4
+
+Módulo PWM: A1
