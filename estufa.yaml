@@ -1,16 +1,31 @@
-# DryFilaPobre
-Secadora de filamentos caseira
+esphome:
+  name: dryfila
 
-Instale o Python e o ESPHome
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
 
+# Enable logging
+logger:
 
+# Enable Home Assistant API
+api:
+  password: ""
 
+ota:
+  - platform: esphome
+    password: ""
 
+wifi:
+  ssid: "SeuWifi"
+  password: "SenhaWifi"
+  power_save_mode: NONE
 
-
-Edite o YAML inicial colocando o seguinte código:
-
-```json
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Dryfila Fallback Hotspot"
+    password: "senhaWifiEstufa"
 
 captive_portal:
 
@@ -23,7 +38,7 @@ output:
     pin: 8  # GPIO2 is common for onboard LED on ESP32/ESP8266
     id: onboard_led
     inverted: true  # Most onboard LEDs are inverted (LOW = ON)
-  
+  # Resistencia
   - platform: slow_pwm
     pin: GPIO1
     id: heating_element
@@ -87,10 +102,9 @@ sensor:
     type: RESULT
 
 
-# Create a switch to control it
+# Botão teste para acender led da placa
 switch:
   - platform: output
     name: "Onboard LED"
     output: onboard_led
     id: led_switch
-```

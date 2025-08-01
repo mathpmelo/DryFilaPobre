@@ -1,0 +1,32 @@
+esphome:
+  name: estufa
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  - platform: esphome
+    password: "ColoqueUmaSenha"
+wifi:
+  ssid: "NomeDoWifi"
+  password: "SenhaDoWifi"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Estufa Fallback Hotspot"
+    password: "5PUGlEypvKua"
+captive_portal:
+
+switch:
+  - platform: gpio
+    name: "LED TESTER"
+    pin: GPIO8    
